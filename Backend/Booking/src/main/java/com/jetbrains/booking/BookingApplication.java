@@ -1,13 +1,13 @@
-package com.jetbrains.experience;
+package com.jetbrains.booking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ExperienceAndBookingApplication {
+public class BookingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ExperienceAndBookingApplication.class, args);
+        SpringApplication.run(BookingApplication.class, args);
     }
 
 }

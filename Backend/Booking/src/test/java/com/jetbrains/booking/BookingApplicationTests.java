@@ -1,10 +1,10 @@
-package com.jetbrains.experience;
+package com.jetbrains.booking;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ExperienceAndBookingApplicationTests {
+class BookingApplicationTests {
 
     @Test
     void contextLoads() {

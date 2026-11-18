@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.jetbrains</groupId>
-    <artifactId>Experience</artifactId>
+    <artifactId>Booking</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Experience and Booking</name>
-    <description>Experience and Booking</description>
+    <name>Booking</name>
+    <description>Booking Service</description>
     <url/>
     <licenses>
         <license/>
