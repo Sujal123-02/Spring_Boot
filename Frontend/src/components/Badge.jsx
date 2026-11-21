@@ -1,8 +1,8 @@
 import React from 'react';
 
 /**
- * Startup-Grade Architectural Badge System (Airbnb/Stripe Design System)
- * Crisp typography, refined borders, and subtle tone-on-tone contrast.
+ * Editorial Architectural Badge System (Airbnb/Stripe/Kinfolk Standard)
+ * Clean typography, delicate hairline borders, and subtle tone-on-tone contrast.
  * Eliminates cheap pastel fills and noisy color blocks behind text.
  */
 export const Badge = ({
@@ -17,16 +17,16 @@ export const Badge = ({
   };
 
   const variantStyles = {
-    default: 'bg-white text-[#33312B] border border-[#E6E0D4] shadow-2xs',
-    maroon: 'bg-[#7C1D2F] text-white font-bold shadow-xs',
-    terra: 'bg-[#7C1D2F] text-white font-bold shadow-xs',
+    default: 'bg-white text-[#44403C] border border-[#E6E0D4] font-medium shadow-2xs',
+    maroon: 'bg-[#7C1D2F] text-white font-semibold shadow-xs',
+    terra: 'bg-white text-[#7C1D2F] border border-[#E6E0D4] font-semibold shadow-2xs',
     terraSolid: 'bg-[#7C1D2F] text-white font-bold shadow-xs',
-    neutral: 'bg-[#FAF8F5] text-[#1C1917] border border-[#E6E0D4] font-semibold',
-    alpine: 'bg-[#ECF6F0] text-[#24543C] border border-[#C6E2D2] font-semibold',
+    neutral: 'bg-[#FAF8F5] text-[#1C1917] border border-[#E6E0D4] font-medium',
+    alpine: 'bg-[#F2F7F4] text-[#24543C] border border-[#D5E6DC] font-semibold',
     alpineSolid: 'bg-[#24543C] text-white font-bold shadow-xs',
-    success: 'bg-[#ECF6F0] text-[#24543C] border border-[#C6E2D2] font-semibold',
+    success: 'bg-[#F2F7F4] text-[#24543C] border border-[#D5E6DC] font-semibold',
     warning: 'bg-white text-[#1C1917] border border-[#E6E0D4] font-semibold shadow-2xs',
-    darkGlass: 'bg-black/75 backdrop-blur-md text-white border border-white/20 font-semibold shadow-sm',
+    darkGlass: 'bg-white/95 backdrop-blur-md text-[#1C1917] border border-[#E6E0D4] font-semibold shadow-xs',
     accent: 'bg-white text-[#7C1D2F] border border-[#E6E0D4] font-bold shadow-2xs',
   };
 

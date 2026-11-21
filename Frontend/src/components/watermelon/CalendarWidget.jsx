@@ -45,14 +45,14 @@ export const CalendarWidget = ({
                   isSoldOut
                     ? 'opacity-40 bg-[#F3F1EC] border-[#E5E2DA] cursor-not-allowed'
                     : isSelected
-                    ? 'bg-gradient-to-br from-[#292521] to-[#1A1816] text-white border-[#7C1D2F]/70 shadow-[0_4px_16px_rgba(26,25,23,0.18)] ring-1.5 ring-[#7C1D2F]/30'
-                    : 'bg-white text-[#1A1917] border-[#E5E2DA] hover:border-[#CCC8BD] hover:bg-[#FAF9F7] shadow-xs'
+                    ? 'bg-[#FAF8F5] text-[#1C1917] border-[#7C1D2F] shadow-sm ring-2 ring-[#7C1D2F]/20'
+                    : 'bg-white text-[#1C1917] border-[#E6E0D4] hover:border-[#CCC4B4] hover:bg-[#FAF8F5] shadow-xs'
                 }
               `}
             >
               <div>
                 <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider">
-                  <span className={isSelected ? 'text-[#D5D1C6]' : 'text-[#827E74]'}>
+                  <span className={isSelected ? 'text-[#7C1D2F] font-bold' : 'text-[#78716C]'}>
                     {sess.date.split(',')[0]}
                   </span>
                   {isSoldOut ? (
@@ -61,8 +61,8 @@ export const CalendarWidget = ({
                     <span
                       className={`text-[9px] font-bold px-2 py-0.5 rounded-full ${
                         isSelected
-                          ? 'bg-white text-[#1A1917] shadow-xs'
-                          : 'bg-[#FAF9F7] text-[#57544C] border border-[#E5E2DA]'
+                          ? 'bg-[#7C1D2F] text-white shadow-2xs'
+                          : 'bg-[#F4EFE6] text-[#7C1D2F]'
                       }`}
                     >
                       {sess.availableSpots} left
@@ -77,7 +77,7 @@ export const CalendarWidget = ({
 
               <div
                 className={`flex items-center gap-1.5 text-[11px] mt-2.5 pt-2 border-t ${
-                  isSelected ? 'border-white/15 text-white/85' : 'border-[#F3F1EC] text-[#827E74]'
+                  isSelected ? 'border-[#E6E0D4] text-[#7C1D2F] font-semibold' : 'border-[#F3F1EC] text-[#827E74]'
                 }`}
               >
                 <Clock className="w-3 h-3 shrink-0" />

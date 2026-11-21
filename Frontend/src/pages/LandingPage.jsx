@@ -237,7 +237,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
         {/* Experience Cards Grid with Fluid Hardware-Accelerated Hover */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {filteredExperiences.length > 0 ? (
-            filteredExperiences.slice(0, 3).map((exp) => (
+            filteredExperiences.slice(0, 6).map((exp) => (
               <div key={exp.id} className="h-full flex flex-col">
                 <ExperienceCard
                   experience={exp}
@@ -330,7 +330,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
                 >
                   View Experience & Book — ₹799
                 </ShimmerButton>
-                
+
                 {/* Professional Status Chip */}
                 <div className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-white border border-[#E6E0D4] text-xs font-bold text-[#1A1917] shadow-2xs">
                   <span className="relative flex h-2 w-2">
