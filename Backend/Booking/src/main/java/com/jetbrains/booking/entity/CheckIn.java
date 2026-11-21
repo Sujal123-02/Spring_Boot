@@ -1,7 +1,10 @@
 package com.jetbrains.booking.entity;
 
+import com.jetbrains.booking.enums.AttendanceStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,37 +22,31 @@ import lombok.Setter;
 import java.time.Instant;
 import java.util.UUID;
 
-/**
- * Entity representing attendance and check-in confirmation for a booking.
- * Belongs to the Booking aggregate root.
- */
 @Entity
-@Table(name = "attendances")
+@Table(name = "check_ins")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Attendance {
+public class CheckIn {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id", updatable = false, nullable = false)
-    private UUID id;
+    @Column(name = "check_in_id", updatable = false, nullable = false)
+    private UUID checkInId;
 
-    /**
-     * Intra-service relationship: The booking this attendance check-in is associated with.
-     */
     @NotNull(message = "Booking reference is mandatory")
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "booking_id", nullable = false, unique = true)
     private Booking booking;
 
-    @NotNull
-    @Builder.Default
-    @Column(name = "checked_in", nullable = false)
-    private Boolean checkedIn = false;
+    @Column(name = "check_in_time")
+    private Instant checkInTime;
 
-    @Column(name = "checked_in_at")
-    private Instant checkedInAt;
+    @NotNull(message = "Attendance status is required")
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    @Column(name = "attendance_status", nullable = false, length = 20)
+    private AttendanceStatus attendanceStatus = AttendanceStatus.ABSENT;
 }
