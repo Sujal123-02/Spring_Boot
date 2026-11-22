@@ -30,7 +30,7 @@ export const SwitchMode = ({
         onClick={toggle}
         className={`
           relative w-14 h-8 rounded-full p-1 transition-colors duration-300 focus:outline-none shadow-inner
-          ${isHost ? 'bg-[#2A5C43]' : 'bg-[#1A1917]'}
+          ${isHost ? 'bg-[#7C1D2F]' : 'bg-[#1A1917]'}
         `}
       >
         <motion.div
@@ -40,14 +40,14 @@ export const SwitchMode = ({
           className="w-6 h-6 rounded-full bg-white shadow-md flex items-center justify-center"
         >
           {isHost ? (
-            <Sparkles className="w-3.5 h-3.5 text-[#2A5C43]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#7C1D2F]" />
           ) : (
             <Compass className="w-3.5 h-3.5 text-[#1A1917]" />
           )}
         </motion.div>
       </button>
 
-      <span className={`text-xs font-semibold transition-colors duration-150 ${isHost ? 'text-[#2A5C43] font-bold' : 'text-[#827E74]'}`}>
+      <span className={`text-xs font-semibold transition-colors duration-150 ${isHost ? 'text-[#7C1D2F] font-bold' : 'text-[#827E74]'}`}>
         Experience Host
       </span>
     </div>

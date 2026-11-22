@@ -85,7 +85,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
       icon: ShieldCheck,
       iconBg: 'bg-[#FAF9F7] text-[#1A1917] border-[#E5E2DA]',
       sub: 'Top 5% among Pune hosts',
-      subColor: 'text-[#57544C]',
+      subColor: 'text-[#2A5C43]',
       hasProgress: true,
       progressValue: 92
     },
@@ -231,7 +231,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                     <div className="pt-2 border-t border-[#F3F1EC]">
                       <div className="w-full bg-[#F3F1EC] h-2 rounded-full overflow-hidden">
                         <div
-                          className="bg-[#7C1D2F] h-full rounded-full transition-all duration-500"
+                          className="bg-[#2A5C43] h-full rounded-full transition-all duration-500"
                           style={{ width: `${card.progressValue}%` }}
                         />
                       </div>
@@ -276,7 +276,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                 </div>
                 <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E6E0D4] space-y-1.5 shadow-2xs">
                   <span className="text-[#827E74] flex items-center gap-1.5 font-bold text-[10px] uppercase tracking-wider">
-                    <Users className="w-3.5 h-3.5 text-[#7C1D2F]" /> Cohort Roster
+                    <Users className="w-3.5 h-3.5 text-[#2A5C43]" /> Cohort Roster
                   </span>
                   <span className="font-extrabold text-sm text-[#1C1917] block">10 of 12 Registered</span>
                 </div>
@@ -429,8 +429,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
           <div className="p-6 rounded-3xl bg-white border border-[#E5E2DA] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-[#E6E0D4] text-[10px] font-bold text-[#1C1917] shadow-2xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F]"></span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#ECF6F0] border border-[#CBE3D5] text-[10px] font-bold text-[#2D7A4F]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2D7A4F] animate-ping"></span>
                   Live Terminal Active
                 </span>
                 <span className="text-xs text-[#827E74]">Saturday 06:30 AM Cohort</span>
@@ -447,11 +447,11 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
             <div className="min-w-[200px] sm:min-w-[240px] space-y-1.5 p-4 rounded-2xl bg-[#FAF9F7] border border-[#E5E2DA]">
               <div className="flex justify-between text-xs font-bold">
                 <span className="text-[#1A1917]">Checked In</span>
-                <span className="text-[#7C1D2F] font-bold">{checkedCount} of {attendees.length} ({checkInPercentage}%)</span>
+                <span className="text-[#2D7A4F]">{checkedCount} of {attendees.length} ({checkInPercentage}%)</span>
               </div>
               <div className="w-full bg-[#E5E2DA] h-2 rounded-full overflow-hidden">
                 <div
-                  className="bg-[#7C1D2F] h-full rounded-full transition-all duration-300"
+                  className="bg-[#2A5C43] h-full rounded-full transition-all duration-300"
                   style={{ width: `${checkInPercentage}%` }}
                 />
               </div>
@@ -479,8 +479,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                 type="button"
                 onClick={() => setStatusFilter('checked_in')}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${statusFilter === 'checked_in'
-                  ? 'bg-[#7C1D2F] text-white shadow-xs'
-                  : 'text-[#666257] hover:text-[#7C1D2F]'
+                  ? 'bg-[#2A5C43] text-white shadow-xs'
+                  : 'text-[#666257] hover:text-[#2A5C43]'
                   }`}
               >
                 Checked In ({checkedCount})
@@ -489,8 +489,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                 type="button"
                 onClick={() => setStatusFilter('awaiting')}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${statusFilter === 'awaiting'
-                  ? 'bg-[#1A1917] text-white shadow-xs'
-                  : 'text-[#666257] hover:text-[#1A1917]'
+                  ? 'bg-[#D97706] text-white shadow-xs'
+                  : 'text-[#666257] hover:text-[#D97706]'
                   }`}
               >
                 Awaiting ({awaitingCount})
@@ -571,7 +571,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                           >
                             <span>{att.bookingId}</span>
                             {copiedId === att.bookingId ? (
-                              <Check className="w-3 h-3 text-[#7C1D2F]" />
+                              <Check className="w-3 h-3 text-[#2D7A4F]" />
                             ) : (
                               <Copy className="w-3 h-3 text-[#827E74]" />
                             )}
@@ -592,8 +592,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                         {/* Status Badge */}
                         <td className="py-4 px-5">
                           {att.checkedIn ? (
-                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FAF9F7] text-[#1C1917] font-semibold text-xs border border-[#E6E0D4] shadow-2xs">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F]"></span>
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#ECF6F0] text-[#24543C] font-semibold text-xs border border-[#C6E2D2] shadow-2xs">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#2D7A4F]"></span>
                               Checked In ({att.checkInTime})
                             </span>
                           ) : (
@@ -612,7 +612,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                             onClick={() => toggleCheckIn(att.id)}
                             className={`font-bold transition-transform active:scale-95 ${att.checkedIn
                               ? 'text-[#706D65] hover:text-[#1A1917]'
-                              : 'bg-[#7C1D2F] hover:bg-[#631423] text-white border-transparent'
+                              : 'bg-[#2A5C43] hover:bg-[#234D37] text-white border-transparent'
                               }`}
                           >
                             {att.checkedIn ? 'Undo' : 'Check In ✓'}
