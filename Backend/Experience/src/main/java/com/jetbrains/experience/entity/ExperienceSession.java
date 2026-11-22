@@ -13,10 +13,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -30,6 +32,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class ExperienceSession {
 
     @Id
@@ -71,20 +74,45 @@ public class ExperienceSession {
 
     @NotNull(message = "Registered count is mandatory")
     @PositiveOrZero(message = "registeredCount must be >= 0")
+    @Builder.Default
     @Column(name = "registered_count", nullable = false)
     private Integer registeredCount = 0;
 
     @NotNull
+    @Builder.Default
     @Column(name = "waitlist_enabled", nullable = false)
     private Boolean waitlistEnabled = false;
 
     @NotNull(message = "Booking status is required")
     @Enumerated(EnumType.STRING)
+    @Builder.Default
     @Column(name = "booking_status", nullable = false, length = 20)
     private SessionBookingStatus bookingStatus = SessionBookingStatus.OPEN;
 
     @NotNull(message = "Session status is required")
     @Enumerated(EnumType.STRING)
+    @Builder.Default
     @Column(name = "session_status", nullable = false, length = 20)
     private SessionStatus sessionStatus = SessionStatus.OPEN;
+
+    @AssertTrue(message = "endTime must be after startTime")
+    public boolean isEndTimeValid() {
+        if (startTime == null || endTime == null)
+            return true;
+        return endTime.isAfter(startTime);
+    }
+
+    @AssertTrue(message = "registrationDeadline must be before startTime")
+    public boolean isRegistrationDeadlineValid() {
+        if (registrationDeadline == null || startTime == null)
+            return true;
+        return registrationDeadline.isBefore(startTime);
+    }
+
+    @AssertTrue(message = "maximumAttendees must be >= minimumAttendees")
+    public boolean isAttendeesCapacityValid() {
+        if (minimumAttendees == null || maximumAttendees == null)
+            return true;
+        return maximumAttendees >= minimumAttendees;
+    }
 }
