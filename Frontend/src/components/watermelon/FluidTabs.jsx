@@ -49,7 +49,7 @@ export const FluidTabs = ({
                 transition={{ type: 'spring', stiffness: 500, damping: 25 }}
                 className="relative z-10"
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#E0533C]' : 'text-[#827E74]'}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#7C1D2F]' : 'text-[#827E74]'}`} />
               </motion.span>
             )}
 

@@ -6,6 +6,8 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BrandLogo } from '../components/BrandLogo';
+import { FluidTabs } from '../components/watermelon/FluidTabs';
+import { SwitchMode } from '../components/watermelon/SwitchMode';
 
 export const AuthPage = ({ onBack, onLoginSuccess }) => {
   const [role, setRole] = useState('USER'); // 'USER' | 'HOST'
@@ -284,83 +286,33 @@ export const AuthPage = ({ onBack, onLoginSuccess }) => {
             </p>
           </div>
 
-          {/* Segmented Mode Switcher (Sign In vs Create Account) */}
-          <div className="p-1 rounded-2xl bg-[#EFECE6] border border-[#DDD6C8] flex items-center text-xs font-bold">
-            <button
-              type="button"
-              onClick={() => {
-                setAuthMode('signin');
+          {/* Watermelon UI Smooth Fluid Spring Tabs */}
+          <FluidTabs
+            tabs={[
+              { id: 'signin', label: 'Sign In', icon: UserCheck },
+              { id: 'signup', label: 'Create Account', icon: User }
+            ]}
+            activeId={authMode}
+            onChange={(m) => {
+              setAuthMode(m);
+              setOtpSent(false);
+              setErrors({});
+            }}
+            layoutId="auth-mode-fluid-tabs"
+            className="bg-[#EFECE6] border-[#DDD6C8] shadow-2xs"
+          />
+
+          {/* Watermelon UI Animated Mode Toggle (Seeker vs Host) */}
+          <div className="py-1">
+            <SwitchMode
+              role={role}
+              onChange={(newRole) => {
+                setRole(newRole);
                 setOtpSent(false);
+                setOtp('');
                 setErrors({});
               }}
-              className={`flex-1 py-2 rounded-xl transition-all ${
-                authMode === 'signin'
-                  ? 'bg-white text-[#1C1917] shadow-xs'
-                  : 'text-[#78716C] hover:text-[#1C1917]'
-              }`}
-            >
-              Sign In
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setAuthMode('signup');
-                setOtpSent(false);
-                setErrors({});
-              }}
-              className={`flex-1 py-2 rounded-xl transition-all ${
-                authMode === 'signup'
-                  ? 'bg-white text-[#1C1917] shadow-xs'
-                  : 'text-[#78716C] hover:text-[#1C1917]'
-              }`}
-            >
-              Create Account
-            </button>
-          </div>
-
-          {/* Role Segment Selector (Seeker vs Host) */}
-          <div className="flex items-center justify-between p-3 rounded-2xl bg-white border border-[#E6E0D4] shadow-2xs">
-            <div className="text-left">
-              <span className="text-[10px] uppercase font-bold text-[#827E74] block tracking-wider">
-                Access Level
-              </span>
-              <span className="text-xs font-bold text-[#1C1917]">
-                {role === 'HOST' ? 'Experience Host (Organizer)' : 'Weekend Seeker (Member)'}
-              </span>
-            </div>
-
-            <div className="flex items-center gap-1 bg-[#FAF8F5] p-1 rounded-xl border border-[#E6E0D4]">
-              <button
-                type="button"
-                onClick={() => {
-                  setRole('USER');
-                  setOtpSent(false);
-                  setErrors({});
-                }}
-                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  role === 'USER'
-                    ? 'bg-[#1C1917] text-white shadow-2xs'
-                    : 'text-[#78716C] hover:text-[#1C1917]'
-                }`}
-              >
-                Seeker
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setRole('HOST');
-                  setOtpSent(false);
-                  setErrors({});
-                }}
-                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  role === 'HOST'
-                    ? 'bg-[#7C1D2F] text-white shadow-2xs'
-                    : 'text-[#78716C] hover:text-[#7C1D2F]'
-                }`}
-              >
-                Host
-              </button>
-            </div>
+            />
           </div>
 
           {/* Google One-Tap Action */}
@@ -414,11 +366,10 @@ export const AuthPage = ({ onBack, onLoginSuccess }) => {
                           setName(e.target.value);
                           if (errors.name) setErrors({ ...errors, name: null });
                         }}
-                        className={`w-full px-3.5 py-2.5 rounded-2xl bg-white border text-xs sm:text-sm font-medium transition-all outline-none ${
-                          errors.name
-                            ? 'border-[#C53030] bg-[#FFF5F5]'
-                            : 'border-[#E6E0D4] focus:border-[#7C1D2F] focus:ring-2 focus:ring-[#7C1D2F]/20'
-                        }`}
+                        className={`w-full px-3.5 py-2.5 rounded-2xl bg-white border text-xs sm:text-sm font-medium transition-all outline-none ${errors.name
+                          ? 'border-[#C53030] bg-[#FFF5F5]'
+                          : 'border-[#E6E0D4] focus:border-[#7C1D2F] focus:ring-2 focus:ring-[#7C1D2F]/20'
+                          }`}
                       />
                       {errors.name && (
                         <p className="text-[11px] text-[#C53030] mt-1 font-semibold flex items-center gap-1">
@@ -440,11 +391,10 @@ export const AuthPage = ({ onBack, onLoginSuccess }) => {
                           setEmail(e.target.value);
                           if (errors.email) setErrors({ ...errors, email: null });
                         }}
-                        className={`w-full px-3.5 py-2.5 rounded-2xl bg-white border text-xs sm:text-sm font-medium transition-all outline-none ${
-                          errors.email
-                            ? 'border-[#C53030] bg-[#FFF5F5]'
-                            : 'border-[#E6E0D4] focus:border-[#7C1D2F] focus:ring-2 focus:ring-[#7C1D2F]/20'
-                        }`}
+                        className={`w-full px-3.5 py-2.5 rounded-2xl bg-white border text-xs sm:text-sm font-medium transition-all outline-none ${errors.email
+                          ? 'border-[#C53030] bg-[#FFF5F5]'
+                          : 'border-[#E6E0D4] focus:border-[#7C1D2F] focus:ring-2 focus:ring-[#7C1D2F]/20'
+                          }`}
                       />
                       {errors.email && (
                         <p className="text-[11px] text-[#C53030] mt-1 font-semibold flex items-center gap-1">
