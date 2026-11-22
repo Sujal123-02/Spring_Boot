@@ -36,30 +36,6 @@ function CountUp({ to, duration = 1.4, decimals = 0, prefix = '', suffix = '' })
 export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EXPERIENCES }) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Scroll reveal trigger - runs once on mount
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-revealed');
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    const elements = document.querySelectorAll('.reveal-on-scroll');
-    elements.forEach((el) => observer.observe(el));
-
-    // Auto-reveal the hero top elements immediately
-    setTimeout(() => {
-      document.querySelectorAll('.hero-reveal').forEach((el) => el.classList.add('is-revealed'));
-    }, 50);
-
-    return () => observer.disconnect();
-  }, []);
-
   const filteredExperiences = selectedCategory === 'all'
     ? experiences
     : experiences.filter((exp) => exp.category === selectedCategory);
@@ -140,7 +116,12 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
           <div className="max-w-3xl mx-auto text-center space-y-5 sm:space-y-6">
 
             {/* Live Status Pill with Mini Host Avatar Stack */}
-            <div className="hero-reveal reveal-on-scroll flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05, ease: EASE_OUT_EXPO }}
+              className="flex justify-center"
+            >
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#E5E2DA] shadow-xs text-xs font-semibold text-[#1A1917] hover:border-[#CCC8BD] transition-colors duration-150">
                 <div className="flex -space-x-1.5 items-center">
                   <img
@@ -163,26 +144,46 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
                 <span>Active this weekend in Pune & Mumbai</span>
                 <span className="text-[#827E74] font-normal">• 34 spots left</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Headline */}
-            <h1 className="hero-reveal reveal-on-scroll reveal-delay-100 text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#1A1917] tracking-[-0.03em] leading-[1.12]">
+            <motion.h1
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: EASE_OUT_EXPO }}
+              className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#1A1917] tracking-[-0.03em] leading-[1.12]"
+            >
               Break the routine.<br />
               <span className="text-[#7C1D2F]">Your weekend starts here.</span>
-            </h1>
+            </motion.h1>
 
             {/* Description */}
-            <p className="hero-reveal reveal-on-scroll reveal-delay-200 text-sm sm:text-lg text-[#666257] max-w-2xl mx-auto leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25, ease: EASE_OUT_EXPO }}
+              className="text-sm sm:text-lg text-[#666257] max-w-2xl mx-auto leading-relaxed"
+            >
               Step away from crowded malls and passive screens. Discover intimate sunrise treks, artisan coffee labs, wheel pottery, and sport socials led by passionate locals.
-            </p>
+            </motion.p>
 
             {/* Universal Search Bar */}
-            <div className="hero-reveal reveal-on-scroll reveal-delay-300 pt-3 sm:pt-4 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35, ease: EASE_OUT_EXPO }}
+              className="pt-3 sm:pt-4 flex justify-center"
+            >
               <SearchBar onSearch={() => onViewChange('discover')} />
-            </div>
+            </motion.div>
 
             {/* Trust Metrics Ribbon with Watermelon CountUp */}
-            <div className="hero-reveal reveal-on-scroll reveal-delay-400 pt-4 sm:pt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-[#827E74] font-medium">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45, ease: EASE_OUT_EXPO }}
+              className="pt-4 sm:pt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-[#827E74] font-medium"
+            >
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#2A5C43]" />
                 <span className="font-bold text-[#1A1917]"><CountUp to={100} suffix="%" /></span> Vetted Local Hosts
@@ -195,7 +196,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
                 <Award className="w-4 h-4 text-[#D97706]" />
                 <span className="font-bold text-[#1A1917]"><CountUp to={4.95} decimals={2} /></span> Avg Guest Score
               </span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -210,7 +211,13 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
 
       {/* TRENDING EXPERIENCES SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="reveal-on-scroll flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
+          className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4"
+        >
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-[#706D65] block mb-1">
               Limited Availability
@@ -232,18 +239,29 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
           >
             Explore all 34 activities <ArrowRight className="w-4 h-4 ml-1" />
           </Button>
-        </div>
+        </motion.div>
 
-        {/* Experience Cards Grid with Fluid Hardware-Accelerated Hover */}
+        {/* Experience Cards Grid with Fluid Staggered Scroll-Reveal */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {filteredExperiences.length > 0 ? (
-            filteredExperiences.slice(0, 6).map((exp) => (
-              <div key={exp.id} className="h-full flex flex-col">
+            filteredExperiences.slice(0, 6).map((exp, idx) => (
+              <motion.div
+                key={exp.id}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{
+                  duration: 0.55,
+                  delay: (idx % 3) * 0.1,
+                  ease: EASE_OUT_EXPO
+                }}
+                className="h-full flex flex-col"
+              >
                 <ExperienceCard
                   experience={exp}
                   onSelect={onSelectExperience}
                 />
-              </div>
+              </motion.div>
             ))
           ) : (
             <div className="col-span-full text-center py-12 bg-white rounded-2xl border border-[#E5E2DA] space-y-3">
@@ -263,10 +281,10 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
       {/* CURATED EDITORIAL COLLECTION - High-Craft Magazine Spotlight */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 36 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.65, ease: EASE_OUT_EXPO }}
           className="rounded-3xl bg-[#FAF8F5]/95 backdrop-blur-md border border-[#E6E0D4] shadow-[0_8px_32px_rgba(28,25,23,0.06)] p-6 sm:p-10 lg:p-12 overflow-hidden"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -378,10 +396,10 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
       {/* COMMUNITY HOST SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.5, ease: EASE_OUT_EXPO }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: EASE_OUT_EXPO }}
           className="text-center max-w-2xl mx-auto mb-12 space-y-2"
         >
           <span className="text-xs font-bold uppercase tracking-wider text-[#2A5C43]">
@@ -396,17 +414,17 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
         </motion.div>
 
         <motion.div
-          variants={staggerContainer(0.08)}
+          variants={staggerContainer(0.12)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: true, amount: 0.15 }}
           className="grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
           {EXPERIENCES.slice(0, 3).map((exp) => (
             <motion.div
               key={exp.host.id}
               variants={staggerItem}
-              className="bg-white p-6 rounded-2xl border border-[#E5E2DA] shadow-xs hover:border-[#CCC8BD] transition-colors duration-150 space-y-4"
+              className="bg-white p-6 rounded-2xl border border-[#E6E0D4] shadow-xs hover:border-[#7C1D2F]/30 hover:shadow-md transition-all duration-300 space-y-4"
             >
               <div className="flex items-center gap-3">
                 <img

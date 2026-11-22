@@ -9,11 +9,18 @@
     text-rendering: optimizeLegibility;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    overflow-x: hidden;
+  }
+
   body {
     background-color: #F7F5F0;
     color: #1C1917;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, sans-serif;
     letter-spacing: -0.015em;
+    overflow-x: hidden;
   }
 
   .tabular-nums {
@@ -37,8 +44,8 @@
 /* Scroll-Driven Entrance Animations (Apple × Linear style) */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 

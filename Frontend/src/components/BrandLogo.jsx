@@ -43,13 +43,13 @@ export const BrandLogo = ({ variant = 'default', size = 'md', className = '' }) 
       {/* Styled Wordmark */}
       <div className="flex flex-col">
         <div className="flex items-baseline">
-          <span className={`${text} font-black tracking-[-0.035em] text-[#1A1917] leading-none`}>
+          <span className={`${text} font-black tracking-[-0.035em] ${variant === 'light' ? 'text-[#FAF8F5]' : 'text-[#1A1917]'} leading-none`}>
             weekend
           </span>
           {/* Velvet Maroon dot accent */}
           <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F] ml-0.5 mb-0.5 inline-block"></span>
         </div>
-        <span className={`${sub} font-semibold text-[#827E74] tracking-[0.12em] uppercase leading-none mt-1`}>
+        <span className={`${sub} font-semibold ${variant === 'light' ? 'text-[#A8A29E]' : 'text-[#827E74]'} tracking-[0.12em] uppercase leading-none mt-1`}>
           experiences
         </span>
       </div>
