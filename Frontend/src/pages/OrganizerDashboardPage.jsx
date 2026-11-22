@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {
   Users, Calendar, TrendingUp, DollarSign, CheckCircle2,
-  Clock, PlusCircle, Search, Filter, ShieldCheck, ArrowUpRight,
-  MapPin, Phone, Mail, Copy, Check, Sparkles, ChevronRight, AlertCircle
+  Clock, PlusCircle, Search, Filter, ShieldCheck,
+  MapPin, Phone, Mail, Copy, Check, Sparkles, ChevronRight, AlertCircle,
+  LayoutDashboard, CalendarDays, QrCode
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../components/Button';
@@ -101,9 +102,25 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
   ];
 
   const dashboardTabs = [
-    { id: 'overview', label: 'Overview & Metrics' },
-    { id: 'sessions', label: `Scheduled Sessions (${MOCK_ORGANIZER_DATA.activeSessions.length})` },
-    { id: 'attendees', label: `On-Site Check-In Gate (${checkedCount}/${attendees.length})` }
+    {
+      id: 'overview',
+      label: 'Overview & Metrics',
+      icon: LayoutDashboard,
+    },
+    {
+      id: 'sessions',
+      label: 'Scheduled Sessions',
+      icon: CalendarDays,
+      badge: `${MOCK_ORGANIZER_DATA.activeSessions.length}`,
+      badgeColor: 'bg-[#EAE5DA] text-[#44403C]'
+    },
+    {
+      id: 'attendees',
+      label: 'On-Site Check-In Gate',
+      icon: QrCode,
+      badge: `${checkedCount}/${attendees.length}`,
+      badgeColor: 'bg-[#ECF6F0] text-[#24543C] border border-[#C6E2D2]'
+    }
   ];
 
   return (
@@ -112,10 +129,10 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
       <div className="p-6 sm:p-8 rounded-3xl bg-white/90 backdrop-blur-md border border-[#E5E2DA] shadow-[0_4px_24px_rgba(26,25,23,0.04)] flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="flex items-start sm:items-center gap-4 sm:gap-5">
           <div className="relative shrink-0">
-            <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-[#1A1917] text-white flex items-center justify-center font-black text-xl shadow-md border-2 border-white">
+            <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-gradient-to-br from-[#9E2A3F] via-[#7C1D2F] to-[#5C1321] text-white flex items-center justify-center font-black text-xl shadow-md border-2 border-white">
               AK
             </div>
-            <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#2A5C43] border-2 border-white flex items-center justify-center text-white">
+            <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#2A5C43] border-2 border-white flex items-center justify-center text-white shadow-2xs">
               <Check className="w-3 h-3 stroke-[3]" />
             </span>
           </div>
@@ -221,10 +238,10 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                     </div>
                   ) : (
                     <div className="pt-2 border-t border-[#F3F1EC] flex items-center justify-between text-[11px]">
-                      <span className={`px-2 py-0.5 rounded-full border text-[10px] font-bold ${card.badgeColor}`}>
+                      <span className={`px-2.5 py-0.5 rounded-full border text-[10px] font-bold ${card.badgeColor}`}>
                         {card.badge}
                       </span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-[#827E74]" />
+                      <span className="text-[10px] font-semibold text-[#827E74]">Real-time</span>
                     </div>
                   )}
                 </motion.div>
@@ -251,17 +268,23 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-                <div className="p-3.5 rounded-2xl bg-[#FAF9F7] border border-[#E5E2DA] space-y-1">
-                  <span className="text-[#827E74] block font-semibold text-[11px]">Venue</span>
-                  <span className="font-bold text-[#1A1917]">ARAI Hills Trailhead Gate</span>
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E6E0D4] space-y-1.5 shadow-2xs">
+                  <span className="text-[#827E74] flex items-center gap-1.5 font-bold text-[10px] uppercase tracking-wider">
+                    <MapPin className="w-3.5 h-3.5 text-[#7C1D2F]" /> Venue
+                  </span>
+                  <span className="font-extrabold text-sm text-[#1C1917] block">ARAI Hills Trailhead Gate</span>
                 </div>
-                <div className="p-3.5 rounded-2xl bg-[#FAF9F7] border border-[#E5E2DA] space-y-1">
-                  <span className="text-[#827E74] block font-semibold text-[11px]">Confirmed Roster</span>
-                  <span className="font-bold text-[#1A1917]">10 of 12 Registered</span>
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E6E0D4] space-y-1.5 shadow-2xs">
+                  <span className="text-[#827E74] flex items-center gap-1.5 font-bold text-[10px] uppercase tracking-wider">
+                    <Users className="w-3.5 h-3.5 text-[#2A5C43]" /> Cohort Roster
+                  </span>
+                  <span className="font-extrabold text-sm text-[#1C1917] block">10 of 12 Registered</span>
                 </div>
-                <div className="p-3.5 rounded-2xl bg-[#FAF9F7] border border-[#E5E2DA] space-y-1">
-                  <span className="text-[#827E74] block font-semibold text-[11px]">Pass Revenue</span>
-                  <span className="font-bold text-[#2D7A4F]">₹7,990.00</span>
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E6E0D4] space-y-1.5 shadow-2xs">
+                  <span className="text-[#827E74] flex items-center gap-1.5 font-bold text-[10px] uppercase tracking-wider">
+                    <DollarSign className="w-3.5 h-3.5 text-[#D97706]" /> Gross Pass Revenue
+                  </span>
+                  <span className="font-extrabold text-sm text-[#2D7A4F] block">₹7,990.00</span>
                 </div>
               </div>
 
@@ -283,23 +306,24 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
             </div>
 
             {/* Right: Host Trust & Tips */}
-            <div className="lg:col-span-4 p-6 rounded-3xl bg-gradient-to-br from-[#2E2822] to-[#1A1816] text-white space-y-4 shadow-sm flex flex-col justify-between">
+            <div className="lg:col-span-4 p-6 rounded-3xl bg-[#151311] border border-[#292420] text-[#D6D3D1] space-y-4 shadow-sm flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#7C1D2F]/70 to-transparent" />
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-xs font-bold text-[#E8A5AF]">
-                  <Sparkles className="w-4 h-4" />
-                  <span>Host Tip of the Week</span>
+                  <Sparkles className="w-4 h-4 text-[#E8A5AF]" />
+                  <span>Host Insight & Yield</span>
                 </div>
                 <h4 className="font-bold text-base text-white leading-snug">
                   Winter morning bouldering demand is up 42% in Pune
                 </h4>
-                <p className="text-xs text-[#D5D1C6] leading-relaxed">
+                <p className="text-xs text-[#A8A29E] leading-relaxed">
                   Attendees love early sunrise slots. Consider opening a second Sunday 06:15 AM slot to capture overflow waitlists.
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#D5D1C6]">
+              <div className="pt-4 border-t border-[#292420] flex items-center justify-between text-xs text-[#A8A29E]">
                 <span>Superhost Perks Active</span>
-                <span className="text-[#2D7A4F] font-bold bg-[#ECF6F0] px-2 py-0.5 rounded-full text-[10px]">
+                <span className="text-[#86EFAC] font-bold bg-[#1F2D24] border border-[#2A4433] px-2.5 py-0.5 rounded-full text-[10px]">
                   0% Commission
                 </span>
               </div>
@@ -344,7 +368,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-[#827E74]">{sess.date}</span>
                     <Badge variant={isFull ? 'default' : 'terra'} size="sm">
-                      {isFull ? 'SOLD OUT' : `${sess.capacity - sess.registeredCount} spots left`}
+                      {isFull ? 'SOLD OUT' : `${sess.capacity - sess.registeredCount} passes open`}
                     </Badge>
                   </div>
 
