@@ -279,7 +279,7 @@ export const ManageSessionsPage = ({ onBack, onViewChange, selectedExperience, o
                           percent={Math.round((sess.registeredCount / sess.totalCapacity) * 100)}
                           label="Cohort Seat Capacity"
                           valueLabel={`${sess.registeredCount} of ${sess.totalCapacity} seats (${sess.availableSpots} available)`}
-                          color={sess.registeredCount >= sess.totalCapacity ? '#C53030' : '#2D7A4F'}
+                          color={sess.registeredCount >= sess.totalCapacity ? '#C53030' : '#7C1D2F'}
                         />
                       </div>
 

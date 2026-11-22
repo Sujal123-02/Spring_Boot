@@ -19,7 +19,7 @@ export const Navbar = ({ currentView, onViewChange, currentUser }) => {
 
   return (
     <header className="sticky top-0 z-30 bg-[#F7F5F0]/90 backdrop-blur-md border-b border-[#E6E0D4] transition-[border-color] duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10 h-16 flex items-center justify-between">
         {/* Left: Brand Logo */}
         <div onClick={() => onViewChange('landing')} className="cursor-pointer">
           <BrandLogo size="md" />

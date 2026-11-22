@@ -96,7 +96,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
                 </span>
               </div>
               <div className="space-y-1">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#2A5C43] block group-hover:text-[#7C1D2F] transition-colors">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#7C1D2F] block group-hover:text-[#5C1321] transition-colors">
                   {experiences[2].categoryLabel}
                 </span>
                 <h4 className="font-bold text-xs text-[#1A1917] line-clamp-1 leading-snug group-hover:text-[#7C1D2F] transition-colors">
@@ -111,7 +111,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
           </div>
         )}
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10 relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-5 sm:space-y-6">
 
             {/* Live Status Pill with Mini Host Avatar Stack */}
@@ -139,7 +139,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
                     className="w-4 h-4 rounded-full border border-white object-cover"
                   />
                 </div>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2A5C43] animate-pulse"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F] animate-pulse"></span>
                 <span>Active this weekend in Pune & Mumbai</span>
                 <span className="text-[#827E74] font-normal">• 6 cohorts this Saturday</span>
               </div>
@@ -209,7 +209,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
       </section>
 
       {/* TRENDING EXPERIENCES SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -278,7 +278,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
       </section>
 
       {/* CURATED EDITORIAL COLLECTION - High-Craft Magazine Spotlight */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 36 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -390,7 +390,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
       </section>
 
       {/* COMMUNITY HOST SHOWCASE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -438,8 +438,8 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
               </p>
               <div className="pt-3 border-t border-[#E5E2DA] flex items-center justify-between text-xs text-[#827E74]">
                 <span className="font-semibold text-[#1A1917]">{exp.host.experiencesHosted} Hosted</span>
-                <span className="flex items-center gap-1 text-[#2D7A4F] font-semibold">
-                  <Star className="w-3 h-3 fill-[#2D7A4F] text-[#2D7A4F]" />
+                <span className="flex items-center gap-1 text-[#D97706] font-semibold">
+                  <Star className="w-3 h-3 fill-[#D97706] text-[#D97706]" />
                   {exp.rating}
                 </span>
               </div>

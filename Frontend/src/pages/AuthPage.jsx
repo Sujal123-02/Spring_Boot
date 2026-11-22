@@ -385,7 +385,7 @@ export const AuthPage = ({ onBack, onLoginSuccess }) => {
                 transition={{ duration: 0.2 }}
                 className="space-y-4 text-center"
               >
-                <div className="p-3 rounded-2xl bg-[#ECF6F0] border border-[#CBE3D5] text-[11px] text-[#2D7A4F] font-semibold flex items-center justify-between">
+                <div className="p-3 rounded-2xl bg-[#FAF9F7] border border-[#E6E0D4] text-[11px] text-[#1C1917] font-semibold flex items-center justify-between">
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     OTP sent to +91 {phone}

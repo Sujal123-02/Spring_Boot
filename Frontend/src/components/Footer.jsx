@@ -30,7 +30,7 @@ export const Footer = ({ onViewChange }) => {
       {/* Subtle Velvet Maroon Top Ambient Accent Hairline */}
       <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#7C1D2F]/70 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10 relative z-10">
         {/* Main Grid: Brand + Navigation + Weekly Drop Invite */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 mb-14">
           {/* Column 1: Brand & Manifesto (5 cols on lg) */}
@@ -44,8 +44,8 @@ export const Footer = ({ onViewChange }) => {
             </p>
 
             {/* Quality & Safety Trust Chip */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1F1A17] border border-[#302824] text-[11px] font-semibold text-[#86EFAC]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1F1A17] border border-[#302824] text-[11px] font-semibold text-[#FAF8F5]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F] animate-pulse" />
               <span>Closed-Loop Cohorts • 100% Vetted Local Hosts</span>
             </div>
           </div>
@@ -169,11 +169,11 @@ export const Footer = ({ onViewChange }) => {
                   disabled={subscribed}
                   className="absolute right-1.5 top-1.5 bottom-1.5 px-3 rounded-lg bg-[#7C1D2F] hover:bg-[#621422] text-white text-xs font-bold transition-all duration-150 flex items-center gap-1 shadow-xs"
                 >
-                  {subscribed ? <Check className="w-3.5 h-3.5 text-[#86EFAC]" /> : <ArrowRight className="w-3.5 h-3.5" />}
+                  {subscribed ? <Check className="w-3.5 h-3.5 text-[#FAF8F5]" /> : <ArrowRight className="w-3.5 h-3.5" />}
                 </button>
               </div>
               {subscribed && (
-                <span className="text-[11px] font-semibold text-[#86EFAC] block animate-fadeIn">
+                <span className="text-[11px] font-semibold text-[#FAF8F5] block animate-fadeIn">
                   You’re on this week’s drop list!
                 </span>
               )}

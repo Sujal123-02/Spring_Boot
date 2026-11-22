@@ -63,9 +63,9 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
       label: "This Month's Revenue",
       value: '₹38,400',
       icon: TrendingUp,
-      iconBg: 'bg-[#ECF6F0] text-[#2D7A4F] border-[#CBE3D5]',
+      iconBg: 'bg-white text-[#7C1D2F] border-[#E6E0D4]',
       sub: '+24% vs last month',
-      subColor: 'text-[#2D7A4F]',
+      subColor: 'text-[#1A1917]',
       badge: 'Payout Nov 24',
       badgeColor: 'bg-[#FAF9F7] text-[#57544C] border-[#E5E2DA]'
     },
@@ -85,7 +85,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
       icon: ShieldCheck,
       iconBg: 'bg-[#FAF9F7] text-[#1A1917] border-[#E5E2DA]',
       sub: 'Top 5% among Pune hosts',
-      subColor: 'text-[#2A5C43]',
+      subColor: 'text-[#57544C]',
       hasProgress: true,
       progressValue: 92
     },
@@ -119,12 +119,12 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
       label: 'On-Site Check-In Gate',
       icon: QrCode,
       badge: `${checkedCount}/${attendees.length}`,
-      badgeColor: 'bg-[#ECF6F0] text-[#24543C] border border-[#C6E2D2]'
+      badgeColor: 'bg-white text-[#1C1917] border border-[#E6E0D4] shadow-2xs'
     }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10 py-8 space-y-8">
       {/* Top Header - Executive Host Cockpit */}
       <div className="p-6 sm:p-8 rounded-3xl bg-white/90 backdrop-blur-md border border-[#E5E2DA] shadow-[0_4px_24px_rgba(26,25,23,0.04)] flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="flex items-start sm:items-center gap-4 sm:gap-5">
@@ -132,7 +132,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
             <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-gradient-to-br from-[#9E2A3F] via-[#7C1D2F] to-[#5C1321] text-white flex items-center justify-center font-black text-xl shadow-md border-2 border-white">
               AK
             </div>
-            <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#2A5C43] border-2 border-white flex items-center justify-center text-white shadow-2xs">
+            <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#7C1D2F] border-2 border-white flex items-center justify-center text-white shadow-2xs">
               <Check className="w-3 h-3 stroke-[3]" />
             </span>
           </div>
@@ -142,8 +142,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
               <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#7C1D2F]">
                 Host Command Center
               </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#ECF6F0] border border-[#CBE3D5] text-[10px] font-bold text-[#2D7A4F]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2D7A4F] animate-pulse"></span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-[#E6E0D4] text-[10px] font-bold text-[#1C1917] shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F]"></span>
                 Superhost Verified
               </span>
               <span className="text-xs font-semibold text-[#827E74] hidden sm:inline">•</span>
@@ -231,7 +231,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                     <div className="pt-2 border-t border-[#F3F1EC]">
                       <div className="w-full bg-[#F3F1EC] h-2 rounded-full overflow-hidden">
                         <div
-                          className="bg-[#2A5C43] h-full rounded-full transition-all duration-500"
+                          className="bg-[#7C1D2F] h-full rounded-full transition-all duration-500"
                           style={{ width: `${card.progressValue}%` }}
                         />
                       </div>
@@ -276,7 +276,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                 </div>
                 <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E6E0D4] space-y-1.5 shadow-2xs">
                   <span className="text-[#827E74] flex items-center gap-1.5 font-bold text-[10px] uppercase tracking-wider">
-                    <Users className="w-3.5 h-3.5 text-[#2A5C43]" /> Cohort Roster
+                    <Users className="w-3.5 h-3.5 text-[#7C1D2F]" /> Cohort Roster
                   </span>
                   <span className="font-extrabold text-sm text-[#1C1917] block">10 of 12 Registered</span>
                 </div>
@@ -284,13 +284,13 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                   <span className="text-[#827E74] flex items-center gap-1.5 font-bold text-[10px] uppercase tracking-wider">
                     <DollarSign className="w-3.5 h-3.5 text-[#D97706]" /> Gross Pass Revenue
                   </span>
-                  <span className="font-extrabold text-sm text-[#2D7A4F] block">₹7,990.00</span>
+                  <span className="font-extrabold text-sm text-[#1C1917] block">₹7,990.00</span>
                 </div>
               </div>
 
               <div className="flex items-center justify-between pt-2">
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#2A5C43] animate-pulse"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#7C1D2F] animate-pulse"></span>
                   <span className="text-xs font-semibold text-[#57544C]">
                     Check-in terminal ready for Saturday morning
                   </span>
@@ -323,7 +323,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
 
               <div className="pt-4 border-t border-[#292420] flex items-center justify-between text-xs text-[#A8A29E]">
                 <span>Superhost Perks Active</span>
-                <span className="text-[#86EFAC] font-bold bg-[#1F2D24] border border-[#2A4433] px-2.5 py-0.5 rounded-full text-[10px]">
+                <span className="text-[#FAF8F5] font-bold bg-white/10 border border-white/20 px-2.5 py-0.5 rounded-full text-[10px]">
                   0% Commission
                 </span>
               </div>
@@ -429,8 +429,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
           <div className="p-6 rounded-3xl bg-white border border-[#E5E2DA] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-5">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#ECF6F0] border border-[#CBE3D5] text-[10px] font-bold text-[#2D7A4F]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#2D7A4F] animate-ping"></span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-[#E6E0D4] text-[10px] font-bold text-[#1C1917] shadow-2xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F]"></span>
                   Live Terminal Active
                 </span>
                 <span className="text-xs text-[#827E74]">Saturday 06:30 AM Cohort</span>
@@ -447,11 +447,11 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
             <div className="min-w-[200px] sm:min-w-[240px] space-y-1.5 p-4 rounded-2xl bg-[#FAF9F7] border border-[#E5E2DA]">
               <div className="flex justify-between text-xs font-bold">
                 <span className="text-[#1A1917]">Checked In</span>
-                <span className="text-[#2D7A4F]">{checkedCount} of {attendees.length} ({checkInPercentage}%)</span>
+                <span className="text-[#7C1D2F] font-bold">{checkedCount} of {attendees.length} ({checkInPercentage}%)</span>
               </div>
               <div className="w-full bg-[#E5E2DA] h-2 rounded-full overflow-hidden">
                 <div
-                  className="bg-[#2A5C43] h-full rounded-full transition-all duration-300"
+                  className="bg-[#7C1D2F] h-full rounded-full transition-all duration-300"
                   style={{ width: `${checkInPercentage}%` }}
                 />
               </div>
@@ -479,8 +479,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                 type="button"
                 onClick={() => setStatusFilter('checked_in')}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${statusFilter === 'checked_in'
-                  ? 'bg-[#2A5C43] text-white shadow-xs'
-                  : 'text-[#666257] hover:text-[#2A5C43]'
+                  ? 'bg-[#7C1D2F] text-white shadow-xs'
+                  : 'text-[#666257] hover:text-[#7C1D2F]'
                   }`}
               >
                 Checked In ({checkedCount})
@@ -489,8 +489,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                 type="button"
                 onClick={() => setStatusFilter('awaiting')}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${statusFilter === 'awaiting'
-                  ? 'bg-[#D97706] text-white shadow-xs'
-                  : 'text-[#666257] hover:text-[#D97706]'
+                  ? 'bg-[#1A1917] text-white shadow-xs'
+                  : 'text-[#666257] hover:text-[#1A1917]'
                   }`}
               >
                 Awaiting ({awaitingCount})
@@ -571,7 +571,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                           >
                             <span>{att.bookingId}</span>
                             {copiedId === att.bookingId ? (
-                              <Check className="w-3 h-3 text-[#2D7A4F]" />
+                              <Check className="w-3 h-3 text-[#7C1D2F]" />
                             ) : (
                               <Copy className="w-3 h-3 text-[#827E74]" />
                             )}
@@ -592,8 +592,8 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                         {/* Status Badge */}
                         <td className="py-4 px-5">
                           {att.checkedIn ? (
-                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#ECF6F0] text-[#24543C] font-semibold text-xs border border-[#C6E2D2] shadow-2xs">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#2D7A4F]"></span>
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FAF9F7] text-[#1C1917] font-semibold text-xs border border-[#E6E0D4] shadow-2xs">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F]"></span>
                               Checked In ({att.checkInTime})
                             </span>
                           ) : (
@@ -612,7 +612,7 @@ export const OrganizerDashboardPage = ({ onViewChange, onSelectExperience }) => 
                             onClick={() => toggleCheckIn(att.id)}
                             className={`font-bold transition-transform active:scale-95 ${att.checkedIn
                               ? 'text-[#706D65] hover:text-[#1A1917]'
-                              : 'bg-[#2A5C43] hover:bg-[#234D37] text-white border-transparent'
+                              : 'bg-[#7C1D2F] hover:bg-[#631423] text-white border-transparent'
                               }`}
                           >
                             {att.checkedIn ? 'Undo' : 'Check In ✓'}

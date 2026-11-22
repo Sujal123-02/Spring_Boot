@@ -25,7 +25,7 @@ export const DiscoverPage = ({ onSelectExperience, experiences = EXPERIENCES }) 
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10 py-6 space-y-6">
       {/* Header & Meta Bar */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-[#E5E2DA]">
         <div>

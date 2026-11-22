@@ -240,9 +240,9 @@ export const BookingFlowPage = ({ experience, session, onBack, onComplete }) => 
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20, delay: 0.1 }}
-              className="w-14 h-14 rounded-full bg-[#ECF6F0] text-[#2D7A4F] flex items-center justify-center mx-auto shadow-xs border border-[#CBE3D5]"
+              className="w-14 h-14 rounded-full bg-white text-[#7C1D2F] flex items-center justify-center mx-auto shadow-md border-2 border-[#7C1D2F]/20"
             >
-              <Check className="w-7 h-7 text-[#2D7A4F]" strokeWidth={2.5} />
+              <Check className="w-7 h-7 text-[#7C1D2F]" strokeWidth={2.5} />
             </motion.div>
 
             <div>
@@ -289,7 +289,7 @@ export const BookingFlowPage = ({ experience, session, onBack, onComplete }) => 
                   </div>
                   <div>
                     <span className="text-[10px] uppercase font-bold text-[#827E74] block">Admission</span>
-                    <span className="font-bold text-[#2D7A4F]">Passes x{guestCount} (Verified)</span>
+                    <span className="font-bold text-[#1C1917]">Passes x{guestCount} (Verified)</span>
                   </div>
                 </div>
 

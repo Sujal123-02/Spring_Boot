@@ -32,7 +32,7 @@ export const ExperienceDetailPage = ({ experience, onBack, onBookSession }) => {
   const grandTotal = passSubtotal + platformTotal;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-10 py-6 space-y-8">
       {/* Top Navigation & Breadcrumb */}
       <div className="flex items-center justify-between">
         <button
@@ -101,7 +101,7 @@ export const ExperienceDetailPage = ({ experience, onBack, onBookSession }) => {
                   alt={experience.host.name}
                   className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border border-[#E6E0D4] shadow-2xs"
                 />
-                <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-[#2A5C43] text-white flex items-center justify-center border-2 border-white shadow-2xs">
+                <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-[#7C1D2F] text-white flex items-center justify-center border-2 border-white shadow-2xs">
                   <Check className="w-2.5 h-2.5 stroke-[3]" />
                 </span>
               </div>
@@ -163,7 +163,7 @@ export const ExperienceDetailPage = ({ experience, onBack, onBookSession }) => {
               </div>
 
               <div className="py-3 flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E6E0D4] flex items-center justify-center text-[#2A5C43] shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E6E0D4] flex items-center justify-center text-[#7C1D2F] shrink-0 mt-0.5">
                   <PackageCheck className="w-4 h-4" />
                 </div>
                 <div>
@@ -229,13 +229,13 @@ export const ExperienceDetailPage = ({ experience, onBack, onBookSession }) => {
             {/* What's Included */}
             <div className="p-5 rounded-3xl bg-white border border-[#E6E0D4] shadow-xs space-y-3">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#1C1917] flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#2A5C43]" />
+                <CheckCircle2 className="w-4 h-4 text-[#7C1D2F]" />
                 Included in your pass
               </h4>
               <ul className="space-y-2 text-xs text-[#44403C]">
                 {experience.location.amenities.map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2A5C43]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -307,8 +307,8 @@ export const ExperienceDetailPage = ({ experience, onBack, onBookSession }) => {
                       <div>
                         <div className="flex items-center gap-2">
                           <span className="font-bold text-sm text-[#1C1917]">{rev.author}</span>
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#ECF6F0] text-[#2A5C43] text-[10px] font-semibold">
-                            <Check className="w-2.5 h-2.5 stroke-[3]" /> Verified guest
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#FAF8F5] text-[#1C1917] border border-[#E6E0D4] text-[10px] font-semibold shadow-2xs">
+                            <Check className="w-2.5 h-2.5 stroke-[3] text-[#7C1D2F]" /> Verified guest
                           </span>
                         </div>
                         <span className="text-[11px] text-[#78716C]">
@@ -434,7 +434,7 @@ export const ExperienceDetailPage = ({ experience, onBack, onBookSession }) => {
             {/* Reassurance Micro-Copy */}
             <div className="space-y-1.5 text-center text-[11px] text-[#78716C] pt-1">
               <p className="flex items-center justify-center gap-1.5 font-medium">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#2A5C43]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#7C1D2F]" />
                 Instant confirmation • Free cancellation up to 24h prior
               </p>
               <p className="text-[10px]">Safe payments powered by closed-loop verification</p>
