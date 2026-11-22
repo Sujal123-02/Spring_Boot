@@ -100,7 +100,7 @@ export const EXPERIENCES = [
       'https://images.unsplash.com/photo-1606167668584-78701c57f13d?auto=format&fit=crop&w=600&q=80',
       'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80'
     ],
-    urgencyBadge: 'Only 3 spots left',
+    urgencyBadge: 'Solo-Friendly Table',
     sessions: [
       {
         id: 'sess-bg-1',
@@ -213,7 +213,7 @@ Enjoy handcrafted pour-overs, artisanal Italian gelato cups, and meet fellow Pun
       'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80',
       'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80'
     ],
-    urgencyBadge: 'Only 2 spots left',
+    urgencyBadge: 'Small Cohort (10 Max)',
     sessions: [
       {
         id: 'sess-1',
@@ -345,7 +345,7 @@ Once our arms are pumped, we transition to our portable brew setup under the ban
       'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=600&q=80',
       'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80'
     ],
-    urgencyBadge: 'Filling Fast',
+    urgencyBadge: 'Dawn Departure',
     sessions: [
       {
         id: 'sess-4',
@@ -409,7 +409,7 @@ Once our arms are pumped, we transition to our portable brew setup under the ban
       'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=600&q=80',
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80'
     ],
-    urgencyBadge: '1 Spot Left',
+    urgencyBadge: 'Intimate Atelier',
     sessions: [
       {
         id: 'sess-5',
@@ -535,7 +535,7 @@ Once our arms are pumped, we transition to our portable brew setup under the ban
       'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=600&q=80'
     ],
-    urgencyBadge: 'Only 3 spots left',
+    urgencyBadge: 'Social Rotating Doubles',
     sessions: [
       {
         id: 'sess-7',

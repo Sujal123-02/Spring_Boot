@@ -390,7 +390,7 @@ export const ExperienceDetailPage = ({ experience, onBack, onBookSession }) => {
                 <div>
                   <span className="text-xs font-bold text-[#1C1917] block">Guest Count</span>
                   <span className="text-[11px] text-[#78716C] font-medium">
-                    {maxSpots} {maxSpots === 1 ? 'spot' : 'spots'} remaining
+                    {selectedSession ? `${selectedSession.registeredCount} of ${selectedSession.totalCapacity} passes reserved` : 'Intimate cohort'}
                   </span>
                 </div>
                 <Stepper

@@ -59,13 +59,11 @@ export const CalendarWidget = ({
                     <span className="text-[#C53030] font-bold">SOLD OUT</span>
                   ) : (
                     <span
-                      className={`text-[9px] font-bold px-2 py-0.5 rounded-full ${
-                        isSelected
-                          ? 'bg-[#7C1D2F] text-white shadow-2xs'
-                          : 'bg-[#F4EFE6] text-[#7C1D2F]'
+                      className={`text-[10px] font-semibold ${
+                        isSelected ? 'text-[#7C1D2F] font-bold' : 'text-[#78716C]'
                       }`}
                     >
-                      {sess.availableSpots} left
+                      {sess.availableSpots <= 2 ? `${sess.availableSpots} passes open` : `${sess.availableSpots} open`}
                     </span>
                   )}
                 </div>

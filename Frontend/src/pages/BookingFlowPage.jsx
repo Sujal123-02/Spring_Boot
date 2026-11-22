@@ -92,7 +92,7 @@ export const BookingFlowPage = ({ experience, session, onBack, onComplete }) => 
               {/* Live Timer Pill */}
               <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-mono font-bold self-start sm:self-auto transition-colors duration-300 ${secondsLeft < 120 ? 'bg-[#FDF2F2] border-[#FECACA] text-[#C53030]' : 'bg-white border-[#E5E2DA] text-[#1A1917] shadow-2xs'}`}>
                 <Clock className="w-3.5 h-3.5 text-[#57544C]" />
-                <span>Spot held for {formatTimer(secondsLeft)}</span>
+                <span>Pass reserved for {formatTimer(secondsLeft)}</span>
               </div>
             </div>
 

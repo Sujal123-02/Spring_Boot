@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  *, ::before, ::after {
+
+  *,
+  ::before,
+  ::after {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -54,25 +57,42 @@
   transform: translateY(0);
 }
 
-.reveal-delay-100 { transition-delay: 80ms; }
-.reveal-delay-200 { transition-delay: 160ms; }
-.reveal-delay-300 { transition-delay: 240ms; }
-.reveal-delay-400 { transition-delay: 320ms; }
+.reveal-delay-100 {
+  transition-delay: 80ms;
+}
+
+.reveal-delay-200 {
+  transition-delay: 160ms;
+}
+
+.reveal-delay-300 {
+  transition-delay: 240ms;
+}
+
+.reveal-delay-400 {
+  transition-delay: 320ms;
+}
 
 /* Ambient Float for Hero Capsules with Silky Hover Pause */
 @keyframes heroFloatLeft {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(-2.2deg);
   }
+
   50% {
     transform: translateY(-8px) rotate(-1.5deg);
   }
 }
 
 @keyframes heroFloatRight {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(2.5deg);
   }
+
   50% {
     transform: translateY(8px) rotate(2deg);
   }
@@ -96,8 +116,13 @@
 
 /* Skeleton shimmer keyframe */
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .skeleton {
@@ -111,7 +136,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
   animation: shimmer 1.5s ease-in-out infinite;
 }
 
@@ -120,20 +145,29 @@
   width: 5px;
   height: 5px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #E5E2DA;
   border-radius: 9999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #CCC8BD;
 }
 
 /* Hide scrollbar for horizontal scrolling containers */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
@@ -142,7 +176,10 @@
     transform: none;
     transition: none;
   }
-  *, ::before, ::after {
+
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

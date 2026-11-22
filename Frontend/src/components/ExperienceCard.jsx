@@ -35,14 +35,10 @@ export const ExperienceCard = ({ experience, onSelect }) => {
           loading="lazy"
         />
 
-        {/* Top-Left: Subtle Live Urgency Chip (Only if urgent, tone-on-tone frosted glass) */}
+        {/* Top-Left: Refined Editorial Craft Tag (No aggressive blinking animations) */}
         {urgencyBadge && (
-          <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#E6E0D4] text-[10px] font-bold text-[#1C1917] shadow-xs">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7C1D2F] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#7C1D2F]"></span>
-            </span>
-            <span>{urgencyBadge}</span>
+          <div className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#E6E0D4] text-[10px] font-bold text-[#1C1917] shadow-2xs tracking-wide">
+            {urgencyBadge}
           </div>
         )}
 
@@ -80,15 +76,24 @@ export const ExperienceCard = ({ experience, onSelect }) => {
             {title}
           </h3>
 
-          {/* Next Available Session Info (Editorial format, not a chunky overlay) */}
+          {/* Next Available Session Info (Natural cohort availability) */}
           {nextSession && (
-            <div className="flex items-center gap-1.5 text-xs text-[#78716C] pt-0.5">
-              <Calendar className="w-3.5 h-3.5 text-[#7C1D2F] shrink-0" />
-              <span className="font-medium text-[#44403C]">
-                {nextSession.date.split(',')[0]}
+            <div className="flex items-center justify-between text-xs text-[#78716C] pt-0.5">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-[#7C1D2F] shrink-0" />
+                <span className="font-medium text-[#44403C]">
+                  {nextSession.date.split(',')[0]}
+                </span>
+                <span>•</span>
+                <span>{nextSession.startTime}</span>
+              </div>
+              <span className="text-[11px] font-medium text-[#78716C]">
+                {nextSession.availableSpots <= 2 ? (
+                  <span className="text-[#7C1D2F] font-semibold">{nextSession.availableSpots} passes open</span>
+                ) : (
+                  <span>Max {nextSession.totalCapacity}</span>
+                )}
               </span>
-              <span>•</span>
-              <span>{nextSession.startTime}</span>
             </div>
           )}
         </div>

@@ -57,9 +57,8 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
                   alt={experiences[0].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
-                <span className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-xs text-[10px] font-bold text-white flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#7C1D2F] animate-pulse" />
-                  2 spots left
+                <span className="absolute top-2 left-2 px-2.5 py-0.5 rounded-md bg-black/60 backdrop-blur-xs text-[10px] font-semibold text-white">
+                  Sat • 06:30 AM
                 </span>
               </div>
               <div className="space-y-1">
@@ -142,7 +141,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
                 </div>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2A5C43] animate-pulse"></span>
                 <span>Active this weekend in Pune & Mumbai</span>
-                <span className="text-[#827E74] font-normal">• 34 spots left</span>
+                <span className="text-[#827E74] font-normal">• 6 cohorts this Saturday</span>
               </div>
             </motion.div>
 
@@ -227,7 +226,7 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
             </h2>
             <p className="text-xs sm:text-sm text-[#827E74] mt-0.5">
               {selectedCategory === 'all'
-                ? 'Top-rated experiences with 1 to 3 spots remaining in Pune.'
+                ? 'Top-rated experiences with verified local hosts in Pune.'
                 : `Showing top ${filteredExperiences.length} curated sessions in this category.`}
             </p>
           </div>
@@ -349,15 +348,12 @@ export const LandingPage = ({ onSelectExperience, onViewChange, experiences = EX
                   View Experience & Book — ₹799
                 </ShimmerButton>
 
-                {/* Professional Status Chip */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-white border border-[#E6E0D4] text-xs font-bold text-[#1A1917] shadow-2xs">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7C1D2F] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7C1D2F]"></span>
-                  </span>
-                  <span>2 spots left</span>
-                  <span className="text-[#D5D1C6] font-normal">•</span>
-                  <span className="text-[#827E74] font-medium text-[11px]">Filling fast</span>
+                {/* Verified Cohort Capacity Pill */}
+                <div className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-white border border-[#E6E0D4] text-xs font-semibold text-[#1A1917] shadow-2xs">
+                  <span className="w-2 h-2 rounded-full bg-[#2A5C43]"></span>
+                  <span className="font-bold text-[#1A1917]">8 of 10 Confirmed</span>
+                  <span className="text-[#D5D1C6]">•</span>
+                  <span className="text-[#78716C] text-[11px] font-medium">2 passes open</span>
                 </div>
               </div>
             </div>
