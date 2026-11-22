@@ -160,10 +160,12 @@ export function App() {
     }
   };
 
+  const isAuthView = currentView === 'auth';
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F6F4EE] text-[#1A1917] relative selection:bg-[#1A1917] selection:text-white">
       {/* Global Dribbble Atmospheric Background Theme (Across Every Page) */}
-      <AppBackground currentView={currentView} />
+      {!isAuthView && <AppBackground currentView={currentView} />}
 
       {/* Toast Notification — Framer Motion enter/exit */}
       <AnimatePresence>
@@ -175,24 +177,26 @@ export function App() {
             transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="fixed top-20 right-4 sm:right-6 z-50 bg-[#1A1917] text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-white/10 text-xs sm:text-sm"
           >
-            <CheckCircle2 className="w-4 h-4 text-[#2D7A4F] shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#7C1D2F] shrink-0" />
             <span>{toastMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Universal Top Navigation */}
-      <Navbar
-        currentView={currentView}
-        onViewChange={(view) => {
-          setCurrentView(view);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        currentUser={currentUser}
-      />
+      {/* Universal Top Navigation (Hidden on Dedicated Full-Screen Auth View) */}
+      {!isAuthView && (
+        <Navbar
+          currentView={currentView}
+          onViewChange={(view) => {
+            setCurrentView(view);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          currentUser={currentUser}
+        />
+      )}
 
       {/* Main Page Viewport — animated page transitions */}
-      <main className="flex-1 pb-12">
+      <main className={`flex-1 ${isAuthView ? '' : 'pb-12'}`}>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentView}
@@ -206,8 +210,8 @@ export function App() {
         </AnimatePresence>
       </main>
 
-      {/* Universal Footer */}
-      <Footer onViewChange={setCurrentView} />
+      {/* Universal Footer (Hidden on Dedicated Full-Screen Auth View) */}
+      {!isAuthView && <Footer onViewChange={setCurrentView} />}
     </div>
   );
 }
