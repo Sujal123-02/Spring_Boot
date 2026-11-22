@@ -163,7 +163,7 @@ export function App() {
   const isAuthView = currentView === 'auth';
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F6F4EE] text-[#1A1917] relative selection:bg-[#1A1917] selection:text-white">
+    <div className={`min-h-screen ${isAuthView ? 'h-screen overflow-hidden' : ''} flex flex-col bg-[#F6F4EE] text-[#1A1917] relative selection:bg-[#1A1917] selection:text-white`}>
       {/* Global Dribbble Atmospheric Background Theme (Across Every Page) */}
       {!isAuthView && <AppBackground currentView={currentView} />}
 
